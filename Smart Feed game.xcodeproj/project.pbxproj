@@ -17,6 +17,8 @@
 		E33ED3A8225FD88500186608 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E33ED3A6225FD88500186608 /* LaunchScreen.storyboard */; };
 		E33ED3B3225FD88500186608 /* Smart_Feed_gameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33ED3B2225FD88500186608 /* Smart_Feed_gameTests.swift */; };
 		E33ED3BE225FD88500186608 /* Smart_Feed_gameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33ED3BD225FD88500186608 /* Smart_Feed_gameUITests.swift */; };
+		E33ED3CD225FE0BB00186608 /* Tiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33ED3CB225FDCF500186608 /* Tiles.swift */; };
+		E33ED3CF227252A700186608 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33ED3CE227252A700186608 /* Grid.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		E33ED3B9225FD88500186608 /* Smart Feed gameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Smart Feed gameUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E33ED3BD225FD88500186608 /* Smart_Feed_gameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smart_Feed_gameUITests.swift; sourceTree = "<group>"; };
 		E33ED3BF225FD88500186608 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E33ED3CB225FDCF500186608 /* Tiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tiles.swift; sourceTree = "<group>"; };
+		E33ED3CE227252A700186608 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,9 +108,9 @@
 			isa = PBXGroup;
 			children = (
 				E33ED397225FD88400186608 /* AppDelegate.swift */,
+				E33ED3D0227252C500186608 /* Classes */,
 				E33ED399225FD88400186608 /* GameScene.sks */,
 				E33ED39B225FD88400186608 /* Actions.sks */,
-				E33ED39D225FD88400186608 /* GameScene.swift */,
 				E33ED39F225FD88400186608 /* GameViewController.swift */,
 				E33ED3A1225FD88400186608 /* Main.storyboard */,
 				E33ED3A4225FD88500186608 /* Assets.xcassets */,
@@ -132,6 +136,16 @@
 				E33ED3BF225FD88500186608 /* Info.plist */,
 			);
 			path = "Smart Feed gameUITests";
+			sourceTree = "<group>";
+		};
+		E33ED3D0227252C500186608 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E33ED3CB225FDCF500186608 /* Tiles.swift */,
+				E33ED3CE227252A700186608 /* Grid.swift */,
+				E33ED39D225FD88400186608 /* GameScene.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,6 +284,8 @@
 				E33ED39E225FD88400186608 /* GameScene.swift in Sources */,
 				E33ED3A0225FD88400186608 /* GameViewController.swift in Sources */,
 				E33ED398225FD88400186608 /* AppDelegate.swift in Sources */,
+				E33ED3CF227252A700186608 /* Grid.swift in Sources */,
+				E33ED3CD225FE0BB00186608 /* Tiles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
