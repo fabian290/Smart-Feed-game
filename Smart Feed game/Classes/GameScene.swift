@@ -11,11 +11,11 @@ import GameplayKit
 
 class GameScene: SKScene {
     var tiles = Tiles()
-    
+    var grid : Grid?
     
     override func didMove(to view: SKView) {
         self.addChild(tiles.sprite)
-    
+    grid = Grid(scene: self)
         //Gesture motion 
         
        
@@ -65,6 +65,26 @@ class GameScene: SKScene {
     
     func touchUp(atPoint pos : CGPoint) {
        
+    }
+    
+    func moveUp() {
+        
+        
+    }
+    
+    func moveDown() {
+        
+        
+    }
+    
+    func moveRight() {
+        
+        
+    }
+    
+    func moveLeft() {
+        
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

@@ -23,10 +23,19 @@ class Grid {
     //Double array, which shows the grids
     var arrray = [[Tiles?]](repeating: [Tiles?] (repeating: nil, count: 5), count: 5)
     
-    init () {
+    init (scene: GameScene) {
         
-        tiles[2][2] = newTile
-        self.addChild(newTile.sprite)
+        for x in 0...gridSize{
+            
+            for  y in 0...gridSize {
+                
+                arrray[x][y] = Tiles()
+                arrray[x][y]?.sprite.position = CGPoint(x: (x * 145) - 290, y: (y * 135) - 450)
+                scene.addChild((arrray[x][y]?.sprite)!)
+                
+                
+            }
+        }
         
         sprite.size = CGSize(width: 50, height: 50)
     }

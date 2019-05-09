@@ -112,9 +112,7 @@
 				E33ED399225FD88400186608 /* GameScene.sks */,
 				E33ED39B225FD88400186608 /* Actions.sks */,
 				E33ED39F225FD88400186608 /* GameViewController.swift */,
-				E33ED3A1225FD88400186608 /* Main.storyboard */,
-				E33ED3A4225FD88500186608 /* Assets.xcassets */,
-				E33ED3A6225FD88500186608 /* LaunchScreen.storyboard */,
+				E37154D82284C5E5001618F7 /* FrontE */,
 				E33ED3A9225FD88500186608 /* Info.plist */,
 			);
 			path = "Smart Feed game";
@@ -141,11 +139,21 @@
 		E33ED3D0227252C500186608 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				E33ED3CB225FDCF500186608 /* Tiles.swift */,
 				E33ED3CE227252A700186608 /* Grid.swift */,
+				E33ED3CB225FDCF500186608 /* Tiles.swift */,
 				E33ED39D225FD88400186608 /* GameScene.swift */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		E37154D82284C5E5001618F7 /* FrontE */ = {
+			isa = PBXGroup;
+			children = (
+				E33ED3A1225FD88400186608 /* Main.storyboard */,
+				E33ED3A4225FD88500186608 /* Assets.xcassets */,
+				E33ED3A6225FD88500186608 /* LaunchScreen.storyboard */,
+			);
+			path = FrontE;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
