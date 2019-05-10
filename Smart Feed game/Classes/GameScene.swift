@@ -68,9 +68,17 @@ class GameScene: SKScene {
     }
     
     func moveUp() {
-        
+        for x in 0...4 {
+            
+            
+            for y in 0...4 {
+                
+                
+        }
         
     }
+        
+}
     
     func moveDown() {
         
