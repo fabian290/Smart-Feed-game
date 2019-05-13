@@ -13,6 +13,9 @@ class GameScene: SKScene {
     var tiles = Tiles()
     var grid : Grid?
     
+
+
+    
     override func didMove(to view: SKView) {
         self.addChild(tiles.sprite)
     grid = Grid(scene: self)
@@ -72,7 +75,15 @@ class GameScene: SKScene {
             
             
             for y in 0...4 {
+              
+                var nextX = x
+                var nextY = y + 1
                 
+//                while nextY < 5 {
+                
+
+                    
+                }
                 
         }
         
@@ -93,6 +104,18 @@ class GameScene: SKScene {
     func moveLeft() {
         
         
+    }
+
+//Spwan tiles situations
+
+    func spawnTile() {
+        
+   var gridArray = [[Tiles?]]()
+        
+        //empty cell on the grid array
+        var noTile : Tiles? = nil
+     
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

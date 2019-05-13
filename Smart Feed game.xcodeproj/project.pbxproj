@@ -14,11 +14,12 @@
 		E33ED3A0225FD88400186608 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33ED39F225FD88400186608 /* GameViewController.swift */; };
 		E33ED3A3225FD88400186608 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E33ED3A1225FD88400186608 /* Main.storyboard */; };
 		E33ED3A5225FD88500186608 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E33ED3A4225FD88500186608 /* Assets.xcassets */; };
-		E33ED3A8225FD88500186608 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E33ED3A6225FD88500186608 /* LaunchScreen.storyboard */; };
 		E33ED3B3225FD88500186608 /* Smart_Feed_gameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33ED3B2225FD88500186608 /* Smart_Feed_gameTests.swift */; };
 		E33ED3BE225FD88500186608 /* Smart_Feed_gameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33ED3BD225FD88500186608 /* Smart_Feed_gameUITests.swift */; };
 		E33ED3CD225FE0BB00186608 /* Tiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33ED3CB225FDCF500186608 /* Tiles.swift */; };
 		E33ED3CF227252A700186608 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33ED3CE227252A700186608 /* Grid.swift */; };
+		E3A4E2582289E7E7006FFF92 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3A4E2572289E7E7006FFF92 /* LaunchScreen.xib */; };
+		E3A4E25C2289E83C006FFF92 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A4E25B2289E83C006FFF92 /* Board.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +48,6 @@
 		E33ED39F225FD88400186608 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		E33ED3A2225FD88400186608 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E33ED3A4225FD88500186608 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E33ED3A7225FD88500186608 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E33ED3A9225FD88500186608 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E33ED3AE225FD88500186608 /* Smart Feed gameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Smart Feed gameTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E33ED3B2225FD88500186608 /* Smart_Feed_gameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smart_Feed_gameTests.swift; sourceTree = "<group>"; };
@@ -57,6 +57,8 @@
 		E33ED3BF225FD88500186608 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E33ED3CB225FDCF500186608 /* Tiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tiles.swift; sourceTree = "<group>"; };
 		E33ED3CE227252A700186608 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
+		E3A4E2572289E7E7006FFF92 /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		E3A4E25B2289E83C006FFF92 /* Board.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,9 @@
 			isa = PBXGroup;
 			children = (
 				E33ED397225FD88400186608 /* AppDelegate.swift */,
+				E3A4E25D2289E8DB006FFF92 /* Game Modes */,
+				E3A4E25A2289E820006FFF92 /* Game Logic */,
+				E3A4E2592289E80A006FFF92 /* Main Menu */,
 				E33ED3D0227252C500186608 /* Classes */,
 				E33ED399225FD88400186608 /* GameScene.sks */,
 				E33ED39B225FD88400186608 /* Actions.sks */,
@@ -151,9 +156,31 @@
 			children = (
 				E33ED3A1225FD88400186608 /* Main.storyboard */,
 				E33ED3A4225FD88500186608 /* Assets.xcassets */,
-				E33ED3A6225FD88500186608 /* LaunchScreen.storyboard */,
+				E3A4E2572289E7E7006FFF92 /* LaunchScreen.xib */,
 			);
 			path = FrontE;
+			sourceTree = "<group>";
+		};
+		E3A4E2592289E80A006FFF92 /* Main Menu */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Main Menu";
+			sourceTree = "<group>";
+		};
+		E3A4E25A2289E820006FFF92 /* Game Logic */ = {
+			isa = PBXGroup;
+			children = (
+				E3A4E25B2289E83C006FFF92 /* Board.swift */,
+			);
+			path = "Game Logic";
+			sourceTree = "<group>";
+		};
+		E3A4E25D2289E8DB006FFF92 /* Game Modes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Game Modes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,7 +290,7 @@
 				E33ED3A3225FD88400186608 /* Main.storyboard in Resources */,
 				E33ED39A225FD88400186608 /* GameScene.sks in Resources */,
 				E33ED3A5225FD88500186608 /* Assets.xcassets in Resources */,
-				E33ED3A8225FD88500186608 /* LaunchScreen.storyboard in Resources */,
+				E3A4E2582289E7E7006FFF92 /* LaunchScreen.xib in Resources */,
 				E33ED39C225FD88400186608 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,6 +318,7 @@
 			files = (
 				E33ED39E225FD88400186608 /* GameScene.swift in Sources */,
 				E33ED3A0225FD88400186608 /* GameViewController.swift in Sources */,
+				E3A4E25C2289E83C006FFF92 /* Board.swift in Sources */,
 				E33ED398225FD88400186608 /* AppDelegate.swift in Sources */,
 				E33ED3CF227252A700186608 /* Grid.swift in Sources */,
 				E33ED3CD225FE0BB00186608 /* Tiles.swift in Sources */,
@@ -335,14 +363,6 @@
 				E33ED3A2225FD88400186608 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		E33ED3A6225FD88500186608 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E33ED3A7225FD88500186608 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -13,8 +13,14 @@ import SpriteKit
 class Tiles {
     
 
-    
+    var count = 2
     var sprite = SKSpriteNode(imageNamed: "Tiles")
+    
+    func setCount(newCount: Int) {
+        
+        count = newCount
+        label.text = String(count)
+    }
     
     init() {
         sprite.size = CGSize(width: 250, height: 250)
