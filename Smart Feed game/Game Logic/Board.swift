@@ -8,8 +8,3 @@
 
 import Foundation
 
-class Board {
-    func moveLeft() {
-        for x in 0 ...4 {
-    }
-}

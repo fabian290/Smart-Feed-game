@@ -55,22 +55,35 @@ class Grid {
         
         for x in 0...4 {
             for y in stride(from: 4, to: -1, by: -1) {
-                gridSize[x][y]?.hasmoved = false
+                arrray[x][y]?.hasMoved = false
             }
         }
         for x in 0...4 {
-            for y in 0...4 {
-                
+            for y in  stride(from: 4, to: -1, by: -1){
                 var nextX = x
                 var nextY = y + 1
-                if Grid[x][y]?.count = 0{
-                    
+                
+                if arrray[x][y]?.count == 0 {
+                    continue
                 }
                 
-                while nextY < 5 {
+                while nextY <= 4 && arrray[nextX][nextY]!.count == 0 {
                     
+                    let currTile = arrray[nextX][nextY - 1];
+                    arrray[nextX][nextY]?.setCount(newCount: currTile!.count);
+                    currTile!.setCount(newCount: 0)
+                    nextY += 1
+//                    tileMove = true
                     
                 }
+                if nextY <= 3 && (arrray[nextX][nextY]?.count)! == arrray[nextX][nextY - 1]!.count && arrray[nextX][nextY - 1]!.hasMoved == false {
+                    
+                    arrray[nextX][nextY]?.setCount(newCount: arrray[nextX][nextY]!.count * 2)
+                    arrray[nextX][nextY - 1]!.setCount(newCount: 0);
+                    arrray[nextX][nextY]!.hasMoved = true
+//                    score += arrray[nextX][nextY]!.count
+                }
+//                print(score)
                 
             }
             

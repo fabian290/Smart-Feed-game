@@ -116,10 +116,10 @@ class GameScene: SKScene {
         var noTile : Tiles? = nil
      
         }
-    }
+
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
+/*  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+
         
         for t in touches { self.touchDown(atPoint: t.location(in: self)) }
     }
@@ -141,3 +141,4 @@ class GameScene: SKScene {
         // Called before each frame is rendered
     }
 }
+ */

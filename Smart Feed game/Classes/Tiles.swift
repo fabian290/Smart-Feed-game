@@ -16,10 +16,11 @@ class Tiles {
     var count = 2
     var sprite = SKSpriteNode(imageNamed: "Tiles")
     
+    var hasMoved = false
     func setCount(newCount: Int) {
         
         count = newCount
-        label.text = String(count)
+     
     }
     
     init() {
