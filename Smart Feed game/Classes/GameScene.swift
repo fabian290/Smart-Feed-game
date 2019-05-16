@@ -40,22 +40,29 @@ class GameScene: SKScene {
             view.addGestureRecognizer(downSwipe)
         }
         
-        @objc func handleSwipe(sender: UISwipeGestureRecognizer) {
-            if sender.state == .ended {
-                switch sender.direction {
-                case .right:
-                    view?.backgroundColor = .red
-                case .left:
-                    view?.backgroundColor = .blue
-                case .up:
-                    view?.backgroundColor = .green
-                case .down:
-                    view?.backgroundColor = .yellow
-                default:
-                    break
-                }
-            }
+    
+    
+@objc func handleSwipe(sender: UISwipeGestureRecognizer) {
+    if sender.state == .ended {
+        switch sender.direction {
+        case .right:
+              grid?.moveRight()
+            view?.backgroundColor = .red
+        case .left:
+            grid?.moveLeft()
+            view?.backgroundColor = .blue
+        case .up:
+            grid?.moveUp()
+            view?.backgroundColor = .green
+        case .down:
+            grid?.moveDown()
+            view?.backgroundColor = .yellow
+        default:
+            break
         }
+    }
+    
+}
     
     
     func touchDown(atPoint pos : CGPoint) {
@@ -69,27 +76,6 @@ class GameScene: SKScene {
     func touchUp(atPoint pos : CGPoint) {
        
     }
-    
-    func moveUp() {
-        for x in 0...4 {
-            
-            
-            for y in 0...4 {
-              
-                var nextX = x
-                var nextY = y + 1
-                
-//                while nextY < 5 {
-                
-
-                    
-                }
-                
-        }
-        
-    }
-        
-}
     
     func moveDown() {
         
@@ -108,17 +94,9 @@ class GameScene: SKScene {
 
 //Spwan tiles situations
 
-    func spawnTile() {
-        
-   var gridArray = [[Tiles?]]()
-        
-        //empty cell on the grid array
-        var noTile : Tiles? = nil
-     
-        }
 
     
-/*  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+  override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 
         
         for t in touches { self.touchDown(atPoint: t.location(in: self)) }
@@ -141,4 +119,4 @@ class GameScene: SKScene {
         // Called before each frame is rendered
     }
 }
- */
+

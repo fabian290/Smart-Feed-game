@@ -12,7 +12,7 @@ import SpriteKit
 class Grid {
    
     
-    let gridSize = 4
+    let gridSize = 5
 
     var xSpeed = 5
     var speed = 5,  ySpeed = 1
@@ -29,18 +29,19 @@ class Grid {
     
     init (scene: GameScene) {
         
-        for x in 0...gridSize{
+        for x in 0...gridSize - 1 {
             
-            for  y in 0...gridSize {
+            for  y in 0...gridSize - 1 {
                 
                 arrray[x][y] = Tiles()
                 arrray[x][y]?.sprite.position = CGPoint(x: (x * 145) - 290, y: (y * 135) - 450)
                 scene.addChild((arrray[x][y]?.sprite)!)
-                
+                arrray[x][y]?.setCount(newCount: 0)
                 
             }
         }
-        
+        arrray[2][3]?.setCount(newCount: 2)
+        arrray[2][2]?.setCount(newCount: 2)
         sprite.size = CGSize(width: 50, height: 50)
     }
     
@@ -76,7 +77,7 @@ class Grid {
 //                    tileMove = true
                     
                 }
-                if nextY <= 3 && (arrray[nextX][nextY]?.count)! == arrray[nextX][nextY - 1]!.count && arrray[nextX][nextY - 1]!.hasMoved == false {
+                if nextY <= 4 && (arrray[nextX][nextY]?.count)! == arrray[nextX][nextY - 1]!.count && arrray[nextX][nextY - 1]!.hasMoved == false {
                     
                     arrray[nextX][nextY]?.setCount(newCount: arrray[nextX][nextY]!.count * 2)
                     arrray[nextX][nextY - 1]!.setCount(newCount: 0);
@@ -90,5 +91,128 @@ class Grid {
         }
         
     }
+    func moveDown() {
+        
+        for x in 0...4 {
+            for y in 0...4 {
+                arrray[x][y]?.hasMoved = false
+            }
+        }
+        for x in 0...4 {
+            for y in  0...4{
+                var nextX = x
+                var nextY = y - 1
+                
+                if arrray[x][y]?.count == 0 {
+                    continue
+                }
+                
+                while nextY >= 0 && arrray[nextX][nextY]!.count == 0 {
+                    
+                    let currTile = arrray[nextX][nextY + 1];
+                    arrray[nextX][nextY]?.setCount(newCount: currTile!.count);
+                    currTile!.setCount(newCount: 0)
+                    nextY -= 1
+                    //                    tileMove = true
+                    
+                }
+                if nextY >= 0 && (arrray[nextX][nextY]?.count)! == arrray[nextX][nextY + 1]!.count && arrray[nextX][nextY + 1]!.hasMoved == false {
+                    
+                    arrray[nextX][nextY]?.setCount(newCount: arrray[nextX][nextY]!.count * 2)
+                    arrray[nextX][nextY + 1]!.setCount(newCount: 0);
+                    arrray[nextX][nextY]!.hasMoved = true
+                    //                    score += arrray[nextX][nextY]!.count
+                }
+                //                print(score)
+                
+            }
+            
+        }
+        
+    }
+    func moveLeft() {
+        
+        for x in 0...4 {
+            for y in 0...4 {
+                arrray[x][y]?.hasMoved = false
+            }
+        }
+        for x in 0...4 {
+            for y in  0...4 {
+                var nextX = x - 1
+                var nextY = y
+                
+                if arrray[x][y]?.count == 0 {
+                    continue
+                }
+                
+                while nextY <= 4 && arrray[nextX][nextY]!.count == 0 {
+                    
+                    let currTile = arrray[nextX - 1][nextY];
+                    arrray[nextX][nextY]?.setCount(newCount: currTile!.count);
+                    currTile!.setCount(newCount: 0)
+                    nextY += 1
+                    //                    tileMove = true
+                    
+                }
+                if nextY <= 4 && (arrray[nextX][nextY]?.count)! == arrray[nextX - 1]][nextY]!.count && arrray[nextX - 1][nextY]!.hasMoved == false {
+                    
+                    arrray[nextX][nextY]?.setCount(newCount: arrray[nextX][nextY]!.count * 2)
+                    arrray[nextX][nextY - 1]!.setCount(newCount: 0);
+                    arrray[nextX][nextY]!.hasMoved = true
+                    //                    score += arrray[nextX][nextY]!.count
+                }
+                //                print(score)
+                
+            }
+            
+        }
+        
+    }
+    func moveRight() {
+        
+        for x in 0...4 {
+            for y in 0...4 {
+                arrray[x][y]?.hasMoved = false
+            }
+        }
+        for x in stride(from: 4, to: -1, by: -1) {
+            for y in  0...4{
+                var nextX = x + 1
+                var nextY = y
+                
+                if arrray[x][y]?.count == 0 {
+                    continue
+                }
+                
+                while nextY <= 4 && arrray[nextX][nextY]!.count == 0 {
+                    
+                    let currTile = arrray[nextX][nextY - 1];
+                    arrray[nextX][nextY]?.setCount(newCount: currTile!.count);
+                    currTile!.setCount(newCount: 0)
+                    nextY += 1
+                    //                    tileMove = true
+                    
+                }
+                if nextY <= 4 && (arrray[nextX][nextY]?.count)! == arrray[nextX][nextY - 1]!.count && arrray[nextX][nextY - 1]!.hasMoved == false {
+                    
+                    arrray[nextX][nextY]?.setCount(newCount: arrray[nextX][nextY]!.count * 2)
+                    arrray[nextX][nextY - 1]!.setCount(newCount: 0);
+                    arrray[nextX][nextY]!.hasMoved = true
+                    //                    score += arrray[nextX][nextY]!.count
+                }
+                //                print(score)
+                
+            }
+            
+        }
+        
+    }
+
+
+
+    
+    
+   
 }
 
