@@ -22,6 +22,7 @@ class Tiles {
         
         count = newCount
         label.text = String(newCount)
+        
 //        if count == 2 {
         
  

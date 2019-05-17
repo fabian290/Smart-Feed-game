@@ -126,13 +126,16 @@ class Grid {
                 //                print(score)
                 
             }
-            func is over() -> Bool {
+            func isover() -> Bool {
                 for row in arrray {
                     for tile in row {
-                        if tile  count = 0 {
+                        if tile count = 0 {
                             return false
                         }
-                        if  x > 0
+                        if  x > 0 {
+                            var nextY = y
+                        arrray[x - 1][nextY]
+                        }
                     }
                 }
                 
