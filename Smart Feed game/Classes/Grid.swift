@@ -20,8 +20,8 @@ class Grid {
     var sprite = SKSpriteNode(imageNamed: "Tiles");
     var newTile = Tiles()
     
-    
-
+    //Note from Mr. Kidd:
+        // Your left/right are not working because you need to swap nextX and nextY in your left/right functions
     
     
     //Double array, which shows the grids
@@ -126,6 +126,18 @@ class Grid {
                 //                print(score)
                 
             }
+            func is over() -> Bool {
+                for row in arrray {
+                    for tile in row {
+                        if tile  count = 0 {
+                            return false
+                        }
+                        if  x > 0
+                    }
+                }
+                
+                
+            }
             
         }
         
@@ -146,19 +158,19 @@ class Grid {
                     continue
                 }
                 
-                while nextY <= 4 && arrray[nextX][nextY]!.count == 0 {
+                while nextX >= 0 && arrray[nextX][nextY]!.count == 0 {
                     
-                    let currTile = arrray[nextX - 1][nextY];
+                     let currTile = arrray[nextX + 1][nextY];
                     arrray[nextX][nextY]?.setCount(newCount: currTile!.count);
                     currTile!.setCount(newCount: 0)
-                    nextY += 1
+                    nextX -= 1
                     //                    tileMove = true
                     
                 }
-                if nextY <= 4 && (arrray[nextX][nextY]?.count)! == arrray[nextX - 1]][nextY]!.count && arrray[nextX - 1][nextY]!.hasMoved == false {
+                if nextX >= 0 && arrray[nextX][nextY]?.count == arrray[nextX + 1][nextY]?.count && arrray[nextX + 1][nextY]!.hasMoved == false {
                     
                     arrray[nextX][nextY]?.setCount(newCount: arrray[nextX][nextY]!.count * 2)
-                    arrray[nextX][nextY - 1]!.setCount(newCount: 0);
+                    arrray[nextX +  1][nextY]!.setCount(newCount: 0);
                     arrray[nextX][nextY]!.hasMoved = true
                     //                    score += arrray[nextX][nextY]!.count
                 }
@@ -185,19 +197,19 @@ class Grid {
                     continue
                 }
                 
-                while nextY <= 4 && arrray[nextX][nextY]!.count == 0 {
-                    
-                    let currTile = arrray[nextX][nextY - 1];
+                while nextX <= 4 && arrray[nextX][nextY]!.count == 0 {
+                    print(nextY, nextX);
+                    let currTile = arrray[nextX - 1][nextY];
                     arrray[nextX][nextY]?.setCount(newCount: currTile!.count);
                     currTile!.setCount(newCount: 0)
-                    nextY += 1
+                    nextX += 1
                     //                    tileMove = true
                     
                 }
-                if nextY <= 4 && (arrray[nextX][nextY]?.count)! == arrray[nextX][nextY - 1]!.count && arrray[nextX][nextY - 1]!.hasMoved == false {
+                if nextX <= 4 && (arrray[nextX][nextY]?.count)! == arrray[nextX - 1][nextY]!.count && arrray[nextX - 1][nextY]!.hasMoved == false {
                     
                     arrray[nextX][nextY]?.setCount(newCount: arrray[nextX][nextY]!.count * 2)
-                    arrray[nextX][nextY - 1]!.setCount(newCount: 0);
+                    arrray[nextX - 1][nextY]!.setCount(newCount: 0);
                     arrray[nextX][nextY]!.hasMoved = true
                     //                    score += arrray[nextX][nextY]!.count
                 }
