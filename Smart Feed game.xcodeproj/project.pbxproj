@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B6E5B0BE2290B1A90074823B /* MainMenyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E5B0BD2290B1A90074823B /* MainMenyViewController.swift */; };
+		B6E5B0C32290B7370074823B /* UImage+Gift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E5B0C22290B7370074823B /* UImage+Gift.swift */; };
 		E33ED398225FD88400186608 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33ED397225FD88400186608 /* AppDelegate.swift */; };
 		E33ED39A225FD88400186608 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E33ED399225FD88400186608 /* GameScene.sks */; };
 		E33ED39C225FD88400186608 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = E33ED39B225FD88400186608 /* Actions.sks */; };
@@ -40,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B6E5B0BD2290B1A90074823B /* MainMenyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenyViewController.swift; sourceTree = "<group>"; };
+		B6E5B0BF2290B4470074823B /* Smart Feed game-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smart Feed game-Bridging-Header.h"; sourceTree = "<group>"; };
+		B6E5B0C22290B7370074823B /* UImage+Gift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UImage+Gift.swift"; sourceTree = "<group>"; };
 		E33ED394225FD88400186608 /* Smart Feed game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smart Feed game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E33ED397225FD88400186608 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E33ED399225FD88400186608 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -116,9 +121,9 @@
 				E33ED3D0227252C500186608 /* Classes */,
 				E33ED399225FD88400186608 /* GameScene.sks */,
 				E33ED39B225FD88400186608 /* Actions.sks */,
-				E33ED39F225FD88400186608 /* GameViewController.swift */,
 				E37154D82284C5E5001618F7 /* FrontE */,
 				E33ED3A9225FD88500186608 /* Info.plist */,
+				B6E5B0BF2290B4470074823B /* Smart Feed game-Bridging-Header.h */,
 			);
 			path = "Smart Feed game";
 			sourceTree = "<group>";
@@ -164,6 +169,9 @@
 		E3A4E2592289E80A006FFF92 /* Main Menu */ = {
 			isa = PBXGroup;
 			children = (
+				B6E5B0BD2290B1A90074823B /* MainMenyViewController.swift */,
+				B6E5B0C22290B7370074823B /* UImage+Gift.swift */,
+				E33ED39F225FD88400186608 /* GameViewController.swift */,
 			);
 			path = "Main Menu";
 			sourceTree = "<group>";
@@ -251,6 +259,7 @@
 				TargetAttributes = {
 					E33ED393225FD88400186608 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1010;
 					};
 					E33ED3AD225FD88500186608 = {
 						CreatedOnToolsVersion = 10.0;
@@ -317,6 +326,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E33ED39E225FD88400186608 /* GameScene.swift in Sources */,
+				B6E5B0C32290B7370074823B /* UImage+Gift.swift in Sources */,
+				B6E5B0BE2290B1A90074823B /* MainMenyViewController.swift in Sources */,
 				E33ED3A0225FD88400186608 /* GameViewController.swift in Sources */,
 				E3A4E25C2289E83C006FFF92 /* Board.swift in Sources */,
 				E33ED398225FD88400186608 /* AppDelegate.swift in Sources */,
@@ -488,6 +499,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Smart Feed game/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -496,6 +508,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ARHS.Smart-Feed-game";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Smart Feed game/Smart Feed game-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -505,6 +519,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Smart Feed game/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -513,6 +528,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ARHS.Smart-Feed-game";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Smart Feed game/Smart Feed game-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
