@@ -20,6 +20,7 @@ class GameScene: SKScene {
     grid = Grid(scene: self)
         //Gesture motion 
         self.addChild(scoreLabel)
+        scoreLabel.position = CGPoint(x: 400, y: 600)
        
             let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
             // the default direction is right
