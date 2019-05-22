@@ -10,14 +10,12 @@ import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene {
-    var tiles = Tiles()
     var grid : Grid?
-    
+    var controller : GameViewController?
 
 
     
     override func didMove(to view: SKView) {
-        self.addChild(tiles.sprite)
     grid = Grid(scene: self)
         //Gesture motion 
         
@@ -59,6 +57,9 @@ class GameScene: SKScene {
             view?.backgroundColor = .yellow
         default:
             break
+        }
+        if (grid?.isover())! {
+            controller?.gameOver()
         }
     }
     

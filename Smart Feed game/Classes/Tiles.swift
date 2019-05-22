@@ -19,7 +19,7 @@ class Tiles {
 
     var hasMoved = false
     func setCount(newCount: Int) {
-        
+        print(newCount)
         count = newCount
         label.text = String(newCount)
         

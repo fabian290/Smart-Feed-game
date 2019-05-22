@@ -18,7 +18,7 @@ class Grid {
     var speed = 5,  ySpeed = 1
     
     var sprite = SKSpriteNode(imageNamed: "Tiles");
-    var newTile = Tiles()
+ 
     
     //Note from Mr. Kidd:
         // Your left/right are not working because you need to swap nextX and nextY in your left/right functions
@@ -51,6 +51,19 @@ class Grid {
             Int(sprite.position.x) + xSpeed, y: Int(sprite.position.y)
         + ySpeed)
     }
+    
+    func spawnTiles () {
+        var newX = Int.random(in: 0...4)
+        var newY = Int.random(in: 0...4)
+        while (arrray[newX][newY]?.count)! > 0 {
+            
+            newX = Int.random(in: 0...4)
+            newY = Int.random(in: 0...4)
+            
+        }
+        arrray[newX][newY]?.setCount(newCount: 2)
+    }
+    
     
     func moveUp() {
         
@@ -89,7 +102,7 @@ class Grid {
             }
             
         }
-        
+        spawnTiles()
     }
     func moveDown() {
         
@@ -126,25 +139,51 @@ class Grid {
                 //                print(score)
                 
             }
-            func isover() -> Bool {
-                for row in arrray {
-                    for tile in row {
-                        if tile count = 0 {
-                            return false
-                        }
-                        if  x > 0 {
-                            var nextY = y
-                        arrray[x - 1][nextY]
-                        }
-                    }
-                }
-                
-                
-            }
+          
             
         }
+        spawnTiles()
+        
         
     }
+    func isover() -> Bool {
+        for  x in 0...4{
+            for y in 0...4 {
+                if arrray[x][y]?.count == 0 {
+                    return false
+                }
+                //left
+                if x > 0 {
+                    if arrray[x][y]?.count == arrray[x-1][y]?.count{
+                        return false
+                    }
+                }
+                //right
+                if x < gridSize {
+                    if arrray[x][y]?.count == arrray[x + 1][y]?.count{
+                        return false
+                    }
+                }
+                //down
+                if y > 0 {
+                    if arrray[x][y]?.count == arrray[x][y - 1]?.count{
+                        return false
+                    }
+                }
+                //up
+                if y < gridSize  {
+                    if arrray[x][y]?.count == arrray[x][y + 1]?.count{
+                        return false
+                    }
+                }
+            }
+        }
+       return true
+
+    }
+
+    
+    
     func moveLeft() {
         
         for x in 0...4 {
@@ -153,6 +192,7 @@ class Grid {
             }
         }
         for x in 0...4 {
+            
             for y in  0...4 {
                 var nextX = x - 1
                 var nextY = y
@@ -182,6 +222,7 @@ class Grid {
             }
             
         }
+        spawnTiles()
         
     }
     func moveRight() {
@@ -201,7 +242,6 @@ class Grid {
                 }
                 
                 while nextX <= 4 && arrray[nextX][nextY]!.count == 0 {
-                    print(nextY, nextX);
                     let currTile = arrray[nextX - 1][nextY];
                     arrray[nextX][nextY]?.setCount(newCount: currTile!.count);
                     currTile!.setCount(newCount: 0)
@@ -221,8 +261,11 @@ class Grid {
             }
             
         }
+        spawnTiles()
         
     }
+    
+    
 
 
 
