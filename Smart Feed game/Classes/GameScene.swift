@@ -12,13 +12,14 @@ import GameplayKit
 class GameScene: SKScene {
     var grid : Grid?
     var controller : GameViewController?
+    var scoreLabel = SKLabelNode(text: "0")
 
 
     
     override func didMove(to view: SKView) {
     grid = Grid(scene: self)
         //Gesture motion 
-        
+        self.addChild(scoreLabel)
        
             let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
             // the default direction is right
@@ -60,6 +61,9 @@ class GameScene: SKScene {
         }
         if (grid?.isover())! {
             controller?.gameOver()
+        } else {
+            scoreLabel.text = String(grid!.score)
+            grid?.spawnTiles()
         }
     }
     

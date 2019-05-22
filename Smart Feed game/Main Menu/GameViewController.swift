@@ -34,6 +34,10 @@ class GameViewController: UIViewController {
     }
     func gameOver() {
         self.dismiss(animated: true, completion: nil)
+        
+        let storyboard = UIStoryboard (name: "Main", bundle: nil)
+        let controller = storyboard.instantiateInitialViewController(withIdentifier: "someViewController")
+        self.present(controller, animated: true, completion: nil)
     }
 
     override var shouldAutorotate: Bool {

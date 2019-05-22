@@ -18,7 +18,7 @@ class Grid {
     var speed = 5,  ySpeed = 1
     
     var sprite = SKSpriteNode(imageNamed: "Tiles");
- 
+    var score = 0
     
     //Note from Mr. Kidd:
         // Your left/right are not working because you need to swap nextX and nextY in your left/right functions
@@ -40,7 +40,7 @@ class Grid {
                 
             }
         }
-        arrray[2][3]?.setCount(newCount: 2)
+        arrray[3][3]?.setCount(newCount: 2)
         arrray[2][2]?.setCount(newCount: 2)
         sprite.size = CGSize(width: 50, height: 50)
     }
@@ -85,24 +85,22 @@ class Grid {
                     
                     let currTile = arrray[nextX][nextY - 1];
                     arrray[nextX][nextY]?.setCount(newCount: currTile!.count);
+  
                     currTile!.setCount(newCount: 0)
                     nextY += 1
-//                    tileMove = true
                     
                 }
                 if nextY <= 4 && (arrray[nextX][nextY]?.count)! == arrray[nextX][nextY - 1]!.count && arrray[nextX][nextY - 1]!.hasMoved == false {
-                    
                     arrray[nextX][nextY]?.setCount(newCount: arrray[nextX][nextY]!.count * 2)
+                   
                     arrray[nextX][nextY - 1]!.setCount(newCount: 0);
                     arrray[nextX][nextY]!.hasMoved = true
-//                    score += arrray[nextX][nextY]!.count
+                    score += arrray[nextX][nextY]!.count
                 }
-//                print(score)
                 
             }
             
         }
-        spawnTiles()
     }
     func moveDown() {
         
@@ -134,15 +132,13 @@ class Grid {
                     arrray[nextX][nextY]?.setCount(newCount: arrray[nextX][nextY]!.count * 2)
                     arrray[nextX][nextY + 1]!.setCount(newCount: 0);
                     arrray[nextX][nextY]!.hasMoved = true
-                    //                    score += arrray[nextX][nextY]!.count
+                                        score += arrray[nextX][nextY]!.count
                 }
-                //                print(score)
-                
+
             }
           
             
         }
-        spawnTiles()
         
         
     }
@@ -159,7 +155,7 @@ class Grid {
                     }
                 }
                 //right
-                if x < gridSize {
+                if x < gridSize-1 {
                     if arrray[x][y]?.count == arrray[x + 1][y]?.count{
                         return false
                     }
@@ -171,7 +167,7 @@ class Grid {
                     }
                 }
                 //up
-                if y < gridSize  {
+                if y < gridSize-1  {
                     if arrray[x][y]?.count == arrray[x][y + 1]?.count{
                         return false
                     }
@@ -215,14 +211,13 @@ class Grid {
                     arrray[nextX][nextY]?.setCount(newCount: arrray[nextX][nextY]!.count * 2)
                     arrray[nextX +  1][nextY]!.setCount(newCount: 0);
                     arrray[nextX][nextY]!.hasMoved = true
-                    //                    score += arrray[nextX][nextY]!.count
+                                        score += arrray[nextX][nextY]!.count
                 }
-                //                print(score)
+
                 
             }
             
         }
-        spawnTiles()
         
     }
     func moveRight() {
@@ -246,7 +241,6 @@ class Grid {
                     arrray[nextX][nextY]?.setCount(newCount: currTile!.count);
                     currTile!.setCount(newCount: 0)
                     nextX += 1
-                    //                    tileMove = true
                     
                 }
                 if nextX <= 4 && (arrray[nextX][nextY]?.count)! == arrray[nextX - 1][nextY]!.count && arrray[nextX - 1][nextY]!.hasMoved == false {
@@ -254,14 +248,14 @@ class Grid {
                     arrray[nextX][nextY]?.setCount(newCount: arrray[nextX][nextY]!.count * 2)
                     arrray[nextX - 1][nextY]!.setCount(newCount: 0);
                     arrray[nextX][nextY]!.hasMoved = true
-                    //                    score += arrray[nextX][nextY]!.count
+                                        score += arrray[nextX][nextY]!.count
                 }
-                //                print(score)
+      
                 
             }
             
         }
-        spawnTiles()
+       
         
     }
     

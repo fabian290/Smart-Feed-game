@@ -19,23 +19,23 @@ class Tiles {
 
     var hasMoved = false
     func setCount(newCount: Int) {
-        print(newCount)
+        print("setting count: " + String(newCount))
         count = newCount
         label.text = String(newCount)
         
-//        if count == 2 {
-        
- 
-//            sprite.texture = SKTexture(imageNamed: "2")
-//        }
+
         
     }
     
     init() {
         sprite.size = CGSize(width: 250, height: 250)
         sprite.position = CGPoint(x: -250, y: -250)
-       sprite.addChild(label)
+        sprite.addChild(label)
         label.fontColor = UIColor.black
+        label.zPosition = 50
+        label.color = UIColor.black
+        self.setCount(newCount: 0)
+        label.fontSize = CGFloat(integerLiteral: 17)
     }
 }
 
